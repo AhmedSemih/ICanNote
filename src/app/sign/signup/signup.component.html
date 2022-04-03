@@ -14,7 +14,7 @@
             <div *ngIf="signForm.get('pass')?.errors?.['minlength']" class="form-text w-75 m-auto error">Minimum 5 characters.</div>
             <div *ngIf="signForm.get('pass')?.errors?.['maxlength']" class="form-text w-75 m-auto error">Maximum 20 characters.</div>
           </div>
-          <button [disabled]="signForm.invalid" class="btn-primary form-control mt-3 p-2 w-50 m-auto">Create Account</button>
+          <button [disabled]="signForm.invalid" class="btn btn-primary form-control mt-3 p-2 w-50 m-auto">Create Account</button>
       </form>
       <p class="text-muted m-auto w-75 mt-2">By creating an account, you are agreeing to our:<br> <a routerLink="#">Terms of Service</a> and <a routerLink="#">Privacy Policy</a> </p>
       <h5 class="text-muted mt-5 m-3">Already have an account ?</h5>

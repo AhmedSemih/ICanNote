@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class SignupComponent implements OnInit {
 
+  //Form Elements
   signForm=new FormGroup({
     email:new FormControl(null,[
       Validators.email,
@@ -23,6 +25,7 @@ export class SignupComponent implements OnInit {
     ])
   });
 
+  //Firebase Connection
     firebaseConfig = {
       apiKey: "AIzaSyA5L8XPq7NlpPcHx4E9u9hUwJY_80C2jds",
       authDomain: "todoapp-e44a6.firebaseapp.com",
@@ -32,16 +35,10 @@ export class SignupComponent implements OnInit {
       appId: "1:425933034571:web:8638b5b7a39667deef29ce",
       measurementId: "G-Z4HKPB2XFW"
   };
-
   app = initializeApp(this.firebaseConfig);
-
   auth=getAuth();
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  //Form Submit Actions
   onSubmit(){
     let email=this.signForm.get('email')?.value;
     let pass=this.signForm.get('pass')?.value;
@@ -52,7 +49,10 @@ export class SignupComponent implements OnInit {
         text:'Account created successfully.',
         icon:'success',
         showConfirmButton:true,
-        confirmButtonText:'OK'
+        confirmButtonText:'OK',
+        timer:2000,
+      }).then(()=>{
+        this.router.navigate(['/login'])
       })
     })
     .catch(()=>{
@@ -61,9 +61,17 @@ export class SignupComponent implements OnInit {
         text:'This email already in use.',
         icon:'error',
         showConfirmButton:true,
-        confirmButtonText:'OK'
+        confirmButtonText:'OK',
+        timer:2000
         }
       )
     })
   }
+
+  constructor(private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+
 }

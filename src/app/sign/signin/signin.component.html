@@ -2,10 +2,10 @@
   <app-brand></app-brand>
   <div class="main p-3 text-center w-100">
     <h1 class="my-5">Login</h1>
-    <form class="form-group formarea">
+    <form class="form-group formarea" [formGroup]="loginForm" (submit)="onSubmit()">
         <input type="email" class="form-control p-2 m-auto w-75" placeholder="Email" formControlName="email">
         <input type="password" class="form-control p-2 m-auto mt-3 w-75" placeholder="Password" formControlName="pass">
-        <button class="btn btn-primary form-control mt-3 mb-2 p-2 w-50 m-auto">Login</button>
+        <button [disabled]="loginForm.invalid" class="btn btn-primary form-control mt-3 mb-2 p-2 w-50 m-auto">Login</button>
     </form>
     <a href="#" class="mt-2 text-primary">Forgot Password?</a>
     <h5 class="text-muted pt-3 mt-5 m-3">Don't have an account ?</h5>
