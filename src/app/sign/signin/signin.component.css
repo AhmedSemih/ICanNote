@@ -1,0 +1,26 @@
+.main{
+  margin-top: 15vh !important;
+  height:60vh;
+  margin:auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.formarea{
+  margin-top: 65px;
+}
+h1{
+  font-weight: 600;
+}
+a{
+  font-weight: 600;
+  text-decoration: none;
+}
+.error{
+  text-align: left !important;
+  color:red;
+  padding-top: .3rem;
+}
+p{
+  font-weight: 300;
+  font-size: .8rem;
+}
