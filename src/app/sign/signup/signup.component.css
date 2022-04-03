@@ -1,31 +1,27 @@
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
-}
 .main{
-    margin-top: 15vh !important;
-    height:60vh;
-    margin:auto;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height:65vh;
+  background-color: white;
 }
 .formarea{
-    margin-top: 65px;
+  margin-top: 65px;
 }
 h1{
-    font-weight: 600;
+  font-weight: 600;
 }
 a{
-    font-weight: 600;
-    text-decoration: none;
+  font-weight: 600;
+  text-decoration: none;
 }
 .error{
-    text-align: left !important;
-    color:red;
-    padding-top: .3rem;
+  text-align: left !important;
+  color:red;
+  padding-top: .3rem;
 }
 p{
-    font-weight: 300;
-    font-size: .8rem;
+  font-weight: 300;
+  font-size: .8rem;
+}
+.signuppage{
+  margin:17vh 15vw 0px 15vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

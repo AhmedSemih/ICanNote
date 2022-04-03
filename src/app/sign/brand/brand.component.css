@@ -1,0 +1,24 @@
+img{
+  width:45vw;
+  height:65vh;
+}
+.picture{
+  position: relative;
+}
+.imgText{
+  padding-top: 42%;
+  position: absolute;
+  top:0px;
+  color:white;
+  font-size: 3rem;
+  letter-spacing:-2px;
+}
+.imgText2{
+  position: absolute;
+  padding-top: 20%;
+  top:0px;
+  font-size: 6rem;
+  font-weight: 900;
+  color:white;
+  background-color: rgba(11, 94, 215,.6);
+}

@@ -1,9 +1,6 @@
 .main{
-  margin-top: 15vh !important;
-  height:60vh;
-  margin:auto;
+  height:65vh;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .formarea{
   margin-top: 65px;
@@ -23,4 +20,8 @@ a{
 p{
   font-weight: 300;
   font-size: .8rem;
+}
+.loginpage{
+  margin:17vh 15vw 0px 15vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

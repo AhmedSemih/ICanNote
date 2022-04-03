@@ -4,12 +4,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { SignRoutingModule } from './sign-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import { BrandComponent } from './brand/brand.component';
 
 
 @NgModule({
   declarations: [
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    BrandComponent
   ],
   imports: [
     CommonModule,

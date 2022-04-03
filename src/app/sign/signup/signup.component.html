@@ -1,20 +1,23 @@
-<div class="main p-3 text-center w-25">
-    <h1 class="my-5">Create Account</h1>
-    <form class="form-group formarea" [formGroup]="signForm" (submit)="onSubmit()">
-        <input type="email" class="form-control p-2 m-auto w-75" placeholder="Email" formControlName="email">
-        <div *ngIf="signForm.get('email')?.dirty && signForm.get('email')?.touched">
-          <div *ngIf="signForm.get('email')?.errors?.['required']" class="form-text w-75 m-auto error">Email is required.</div>
-          <div *ngIf="signForm.get('email')?.errors?.['email']" class="form-text w-75 m-auto error">Please enter a valid email.</div>
-        </div>
-        <input type="password" class="form-control p-2 m-auto mt-3 w-75" placeholder="Password" formControlName="pass">
-        <div *ngIf="signForm.get('pass')?.dirty && signForm.get('pass')?.touched">
-          <div *ngIf="signForm.get('pass')?.errors?.['required']" class="form-text w-75 m-auto error">Password is required.</div>
-          <div *ngIf="signForm.get('pass')?.errors?.['minlength']" class="form-text w-75 m-auto error">Minimum 5 characters.</div>
-          <div *ngIf="signForm.get('pass')?.errors?.['maxlength']" class="form-text w-75 m-auto error">Maximum 20 characters.</div>
-        </div>
-        <button [disabled]="signForm.invalid" class="btn-primary form-control mt-3 p-2 w-50 m-auto">Create Account</button>
-    </form>
-    <p class="text-muted m-auto w-75 mt-2">By creating an account, you are agreeing to our:<br> <a routerLink="#">Terms of Service</a> and <a routerLink="#">Privacy Policy</a> </p>
-    <h5 class="text-muted mt-5 m-3">Already have an account ?</h5>
-    <a routerLink="/login" class="m-5 h4">Login</a>
+<div class="signuppage d-flex">
+  <app-brand></app-brand>
+  <div class="main p-3 text-center w-100">
+      <h1 class="my-5">Create Account</h1>
+      <form class="form-group formarea" [formGroup]="signForm" (submit)="onSubmit()">
+          <input type="email" class="form-control p-2 m-auto w-75" placeholder="Email" formControlName="email">
+          <div *ngIf="signForm.get('email')?.dirty && signForm.get('email')?.touched">
+            <div *ngIf="signForm.get('email')?.errors?.['required']" class="form-text w-75 m-auto error">Email is required.</div>
+            <div *ngIf="signForm.get('email')?.errors?.['email']" class="form-text w-75 m-auto error">Please enter a valid email.</div>
+          </div>
+          <input type="password" class="form-control p-2 m-auto mt-3 w-75" placeholder="Password" formControlName="pass">
+          <div *ngIf="signForm.get('pass')?.dirty && signForm.get('pass')?.touched">
+            <div *ngIf="signForm.get('pass')?.errors?.['required']" class="form-text w-75 m-auto error">Password is required.</div>
+            <div *ngIf="signForm.get('pass')?.errors?.['minlength']" class="form-text w-75 m-auto error">Minimum 5 characters.</div>
+            <div *ngIf="signForm.get('pass')?.errors?.['maxlength']" class="form-text w-75 m-auto error">Maximum 20 characters.</div>
+          </div>
+          <button [disabled]="signForm.invalid" class="btn-primary form-control mt-3 p-2 w-50 m-auto">Create Account</button>
+      </form>
+      <p class="text-muted m-auto w-75 mt-2">By creating an account, you are agreeing to our:<br> <a routerLink="#">Terms of Service</a> and <a routerLink="#">Privacy Policy</a> </p>
+      <h5 class="text-muted mt-5 m-3">Already have an account ?</h5>
+      <a routerLink="/login" class="m-5 h4">Login</a>
+  </div>
 </div>
