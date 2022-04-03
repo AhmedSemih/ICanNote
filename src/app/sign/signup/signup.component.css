@@ -22,7 +22,8 @@ a{
 }
 .error{
     text-align: left !important;
-    
+    color:red;
+    padding-top: .3rem;
 }
 p{
     font-weight: 300;
