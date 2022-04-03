@@ -5,13 +5,13 @@
 }
 .main{
     margin-top: 15vh !important;
-    height:65vh;
+    height:60vh;
     margin:auto;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .formarea{
-    margin-top: 80px;
+    margin-top: 65px;
 }
 h1{
     font-weight: 600;
