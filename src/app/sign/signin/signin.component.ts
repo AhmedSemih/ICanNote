@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import {signInWithEmailAndPassword ,setPersistence,browserSessionPersistence,browserLocalPersistence} from "firebase/auth";
+import {signInWithEmailAndPassword ,setPersistence,browserSessionPersistence,browserLocalPersistence, onAuthStateChanged} from "firebase/auth";
 import { FbconnectionService } from 'src/app/fbconnection.service';
 import Swal from 'sweetalert2';
 
@@ -22,11 +22,23 @@ export class SigninComponent implements OnInit {
   //Form Submit Actions
   onSubmit(){
 
-    //Login
-    signInWithEmailAndPassword(this.firebase.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
-    .then(()=>{
+      //Login
+      signInWithEmailAndPassword(this.firebase.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
+      .then(()=>{
       //Remember me action
-      this.loginForm.get('remember')?setPersistence(this.firebase.auth,browserLocalPersistence):setPersistence(this.firebase.auth,browserSessionPersistence);
+      if(this.loginForm.get('remember')?.value){
+        setPersistence(this.firebase.auth,browserLocalPersistence)
+        .then(()=>
+        {
+          return signInWithEmailAndPassword(this.firebase.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
+        })
+      }
+      else{
+        setPersistence(this.firebase.auth,browserSessionPersistence)
+        .then(()=>{
+          return signInWithEmailAndPassword(this.firebase.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
+        })
+      }
       this.router.navigate(['/home']);
     })
     .catch(()=>{
@@ -43,7 +55,10 @@ export class SigninComponent implements OnInit {
   constructor(private router:Router,private firebase:FbconnectionService) { }
 
   ngOnInit(): void {
-  }
-
-
+    onAuthStateChanged(this.firebase.auth,user=>{
+      if(user&&user!==null){
+        this.router.navigate(['/home']);
+      }
+    })
+}
 }
