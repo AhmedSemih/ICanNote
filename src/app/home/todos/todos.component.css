@@ -21,4 +21,8 @@ h1{
 #todos{
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-height: 85vh;
+}
+.date{
+  font-weight: 600;
 }
