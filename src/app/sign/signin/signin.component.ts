@@ -22,12 +22,11 @@ export class SigninComponent implements OnInit {
   //Form Submit Actions
   onSubmit(){
 
-    //Remember me action
-    this.loginForm.get('remember')?setPersistence(this.firebase.auth,browserLocalPersistence):setPersistence(this.firebase.auth,browserSessionPersistence);
-
     //Login
     signInWithEmailAndPassword(this.firebase.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
     .then(()=>{
+      //Remember me action
+      this.loginForm.get('remember')?setPersistence(this.firebase.auth,browserLocalPersistence):setPersistence(this.firebase.auth,browserSessionPersistence);
       this.router.navigate(['/home']);
     })
     .catch(()=>{
