@@ -1,3 +1,8 @@
+*{
+  padding: 0px;
+  margin:0px;
+  box-sizing: border-box;
+}
 .main{
   height:65vh;
   background-color: white;
@@ -24,4 +29,11 @@ p{
 .loginpage{
   margin:17vh 15vw 0px 15vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.bot{
+  display: flex;
+  justify-content: space-between;
+}
+.check{
+  text-align: left !important;
 }

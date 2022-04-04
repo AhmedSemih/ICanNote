@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
+import { FbconnectionService } from 'src/app/fbconnection.service';
 
 @Component({
   selector: 'app-signup',
@@ -25,24 +25,11 @@ export class SignupComponent implements OnInit {
     ])
   });
 
-  //Firebase Connection
-    firebaseConfig = {
-      apiKey: "AIzaSyA5L8XPq7NlpPcHx4E9u9hUwJY_80C2jds",
-      authDomain: "todoapp-e44a6.firebaseapp.com",
-      projectId: "todoapp-e44a6",
-      storageBucket: "todoapp-e44a6.appspot.com",
-      messagingSenderId: "425933034571",
-      appId: "1:425933034571:web:8638b5b7a39667deef29ce",
-      measurementId: "G-Z4HKPB2XFW"
-  };
-  app = initializeApp(this.firebaseConfig);
-  auth=getAuth();
-
   //Form Submit Actions
   onSubmit(){
     let email=this.signForm.get('email')?.value;
     let pass=this.signForm.get('pass')?.value;
-    createUserWithEmailAndPassword(this.auth,email,pass)
+    createUserWithEmailAndPassword(this.firebase.auth,email,pass)
     .then(()=>{
       Swal.fire({
         title:'Success',
@@ -69,7 +56,7 @@ export class SignupComponent implements OnInit {
     })
   }
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private firebase:FbconnectionService) { }
 
   ngOnInit(): void {
   }

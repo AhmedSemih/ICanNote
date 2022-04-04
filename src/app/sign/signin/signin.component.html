@@ -5,9 +5,15 @@
     <form class="form-group formarea" [formGroup]="loginForm" (submit)="onSubmit()">
         <input type="email" class="form-control p-2 m-auto w-75" placeholder="Email" formControlName="email">
         <input type="password" class="form-control p-2 m-auto mt-3 w-75" placeholder="Password" formControlName="pass">
-        <button [disabled]="loginForm.invalid" class="btn btn-primary form-control mt-3 mb-2 p-2 w-50 m-auto">Login</button>
+        <div class="row w-75 m-auto bot">
+          <div class="col-xl-7 pt-4 check">
+            <label for="remember"><input type="checkbox" name="remember" formControlName="remember"> Remember Me</label>
+          </div>
+        <div class="col-xl-5">
+          <button [disabled]="loginForm.invalid" class="btn btn-primary my-3 w-100 p-2">Login</button>
+        </div>
+      </div>
     </form>
-    <a href="#" class="mt-2 text-primary">Forgot Password?</a>
     <h5 class="text-muted pt-3 mt-5 m-3">Don't have an account ?</h5>
     <a routerLink="/signup" class="m-5 h4">Sign Up</a>
   </div>
