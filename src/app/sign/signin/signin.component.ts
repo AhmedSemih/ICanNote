@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import Swal from 'sweetalert2';
@@ -34,7 +35,7 @@ export class SigninComponent implements OnInit {
   onSubmit(){
     signInWithEmailAndPassword(this.auth,this.loginForm.get('email')?.value,this.loginForm.get('pass')?.value)
     .then(()=>{
-
+      this.router.navigate(['/home']);
     })
     .catch(error=>{
       Swal.fire({
@@ -43,10 +44,11 @@ export class SigninComponent implements OnInit {
         icon:'error',
         timer:2000,
       })
+      this.loginForm.get('pass')?.reset();
     })
   }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }

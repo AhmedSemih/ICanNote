@@ -65,6 +65,7 @@ export class SignupComponent implements OnInit {
         timer:2000
         }
       )
+      this.signForm.get('email')?.reset();
     })
   }
 
