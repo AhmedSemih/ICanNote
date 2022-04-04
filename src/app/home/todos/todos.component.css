@@ -1,0 +1,24 @@
+#todoTop{
+  background-color: rgb(11, 94, 215);
+  color:white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 15px;
+}
+#addBtn,#delBtn{
+  font-size: 2rem;
+  color:white;
+  transition: .5;
+}
+#addBtn:hover,#delBtn:hover{
+  color:rgb(143, 255, 255)
+}
+h1{
+  font-weight: 700;
+}
+#status{
+  width:2rem;
+  height: 2rem;
+}
+#todos{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
