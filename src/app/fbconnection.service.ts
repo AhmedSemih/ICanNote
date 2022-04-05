@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { initializeApp } from "firebase/app";
+import { initializeApp} from "firebase/app";
 import { getAuth} from "firebase/auth";
+import { getDatabase , ref} from 'firebase/database';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class FbconnectionService {
   };
 
   public app = initializeApp(this.firebaseConfig);
-  public auth=getAuth();
+  public auth=getAuth(this.app);
+  public db=getDatabase(this.app);
 
   constructor() { }
 }
