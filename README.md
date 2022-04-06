@@ -1,10 +1,10 @@
 ![ICanNote](./src/assets/ICN.gif)
 
-# TodoApp
+# I Can Note
 
 A useful todo and notepad application with database.
 
-**Live demo: [https://AhmedSemih.github.io/ICanNote/](https://AhmedSemih.github.io/ICanNote/)**
+**Live demo: [https://ahmedsemih.github.io/ICanNote/](https://ahmedsemih.github.io/ICanNote/)**
 
 ## Built with
 
