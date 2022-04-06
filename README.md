@@ -8,10 +8,10 @@ A useful todo and notepad application with database.
 
 ## Built with
 
--[Angular](https://angular.io/)
--[Firebase](https://firebase.google.com/)
--[Bootstrap](https://getbootstrap.com/)
--[SweertAlert2](https://sweetalert2.github.io/)
+- [Angular](https://angular.io/)
+- [Firebase](https://firebase.google.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [SweertAlert2](https://sweetalert2.github.io/)
 
 ## Getting Started
 
