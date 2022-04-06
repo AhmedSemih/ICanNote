@@ -1,21 +1,39 @@
+<!-- Topbar -->
 <div id="todoTop" class="navbar w-100 px-4">
-  <button id="delBtn" class="btn"><i class="fa-solid fa-trash"></i></button>
+  <button id="delBtn" class="btn" (click)="onClickDelAll()"><i class="fa-solid fa-trash"></i></button>
   <h1>Notes</h1>
-  <button id="logout" class="btn" data-bs-toggle="modal">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+  <button id="logout" class="btn" data-bs-toggle="modal"><i class="fa-solid fa-right-from-bracket"></i></button>
 </div>
-<div id="notes" class="p-4 d-flex">
-
-    <div class="note p-3">
+<!-- Notes -->
+<div id="notes" class="p-4 d-flex" >
+    <div class="note p-3" *ngFor="let item of noteDatas">
       <div class="topNote d-flex">
-        <h3>Title</h3>
-        <i class="fa-solid fa-xmark exit"></i>
+        <h3>{{item.title}}</h3>
+        <i class="fa-solid fa-xmark exit" (click)="onClickDel(item.id)"></i>
       </div>
-
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nihil quaerat animi. Lorem ipsum dolor sit amet.</p>
-
-    </div>
-    <div class="addNote d-flex">
+      <textarea readonly cols="55" rows="10" class="textArea">{{item.text}}</textarea>
+      </div>
+    <div class="addNote d-flex" data-bs-toggle="modal" data-bs-target="#noteModal" [class.none]="noteCount>=4">
       <i class="fa-solid fa-circle-plus addIcon"></i>
     </div>
-
+</div>
+<!-- Modal -->
+<div id="noteModal" class="modal fade">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Add New Note</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="noteForm" (submit)="onSubmit()">
+      <label for="title" class="h4">Title</label>
+      <input type="text" formControlName="title" class="form-control" maxlength="25">
+      <label for="text" class="h4 mt-3">Note</label>
+      <textarea formControlName="text" id="noteText" cols="30" rows="10" class="form-control" maxlength="300"></textarea>
+      <button type="submit" class="btn btn-primary form-control mt-3" data-bs-dismiss="modal" [disabled]="noteForm.invalid">Add</button>
+    </form>
+    </div>
+  </div>
+</div>
 </div>

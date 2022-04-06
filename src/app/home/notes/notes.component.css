@@ -9,6 +9,7 @@
   color:white;
   transition: .5;
 }
+
 #logout:hover,#delBtn:hover{
   color:rgb(143, 255, 255)
 }
@@ -17,6 +18,8 @@ h1{
 }
 #notes{
 flex-wrap: wrap;
+overflow-y: hidden;
+height: 88vh;
 }
 .note,.addNote{
   background-color: white;
@@ -50,4 +53,17 @@ font-size: 1.5rem;
   font-size: 8rem;
   align-self: center;
   text-align: center;
+}
+#noteText{
+  resize: none;
+  overflow-y: hidden;
+}
+.none{
+  display: none;
+  visibility: hidden;
+}
+.textArea{
+  resize: none;
+  overflow-y: hidden;
+  border:none;
 }
