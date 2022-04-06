@@ -1,12 +1,12 @@
 img{
   width:45vw;
-  height:65vh;
+  height:75vh;
 }
 .picture{
   position: relative;
 }
 .imgText{
-  padding-top: 42%;
+  padding-top: 50%;
   position: absolute;
   top:0px;
   color:white;
@@ -15,7 +15,7 @@ img{
 }
 .imgText2{
   position: absolute;
-  padding-top: 20%;
+  padding-top: 30%;
   top:0px;
   font-size: 6rem;
   font-weight: 900;

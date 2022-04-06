@@ -2,7 +2,7 @@
 <div id="todoTop" class="navbar w-100 px-4">
   <button id="delBtn" class="btn" (click)="onClickDelAll()"><i class="fa-solid fa-trash"></i></button>
   <h1>Notes</h1>
-  <button id="logout" class="btn" data-bs-toggle="modal"><i class="fa-solid fa-right-from-bracket"></i></button>
+  <button id="logout" class="btn" data-bs-toggle="modal" (click)="onClickLogout()"><i class="fa-solid fa-right-from-bracket"></i></button>
 </div>
 <!-- Notes -->
 <div id="notes" class="p-4 d-flex" >
@@ -13,6 +13,7 @@
       </div>
       <textarea readonly cols="55" rows="10" class="textArea">{{item.text}}</textarea>
       </div>
+<!-- Add Note -->
     <div class="addNote d-flex" data-bs-toggle="modal" data-bs-target="#noteModal" [class.none]="noteCount>=4">
       <i class="fa-solid fa-circle-plus addIcon"></i>
     </div>

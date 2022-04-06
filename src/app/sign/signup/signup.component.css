@@ -1,12 +1,14 @@
+/* Signup Area */
 .main{
-  height:65vh;
+  height:75vh;
   background-color: white;
 }
 .formarea{
-  margin-top: 65px;
+  margin-top: 10vh;
 }
 h1{
   font-weight: 600;
+  margin-top: 10vh;
 }
 a{
   font-weight: 600;
@@ -22,6 +24,23 @@ p{
   font-size: .8rem;
 }
 .signuppage{
-  margin:17vh 15vw 0px 15vw;
+  margin:13vh 15vw 0px 15vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+h5{
+  margin-top: 6.5vh !important;
+}
+
+/* Password Toggler */
+.passArea{
+  position: relative;
+}
+.eyeToggle{
+  position: absolute;
+  top:1.4vh;
+  right:3.7vw;
+  opacity: .5;
+}
+.eyeToggle:hover{
+  opacity: 1;
 }

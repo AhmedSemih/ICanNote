@@ -1,3 +1,4 @@
+/* Topbar */
 #todoTop{
   background-color: rgb(11, 94, 215);
   color:white;
@@ -9,13 +10,14 @@
   color:white;
   transition: .5;
 }
-
 #logout:hover,#delBtn:hover{
   color:rgb(143, 255, 255)
 }
 h1{
   font-weight: 700;
 }
+
+/* Notes */
 #notes{
 flex-wrap: wrap;
 overflow-y: hidden;
@@ -39,6 +41,8 @@ font-size: 1.5rem;
 .exit:hover{
   color:grey
 }
+
+/* Add Note */
 .addNote{
   opacity: .4;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -54,13 +58,14 @@ font-size: 1.5rem;
   align-self: center;
   text-align: center;
 }
-#noteText{
-  resize: none;
-  overflow-y: hidden;
-}
 .none{
   display: none;
   visibility: hidden;
+}
+
+#noteText{
+  resize: none;
+  overflow-y: hidden;
 }
 .textArea{
   resize: none;

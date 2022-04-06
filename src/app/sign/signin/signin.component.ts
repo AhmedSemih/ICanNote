@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import {signInWithEmailAndPassword ,setPersistence,browserSessionPersistence,browserLocalPersistence, onAuthStateChanged} from "firebase/auth";
+import {signInWithEmailAndPassword ,setPersistence,browserSessionPersistence,browserLocalPersistence, onAuthStateChanged, getAuth} from "firebase/auth";
 import { FbconnectionService } from 'src/app/fbconnection.service';
 import Swal from 'sweetalert2';
 
@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
+
+  userStatus=false;
 
   //Form Elements
   loginForm=new FormGroup({
@@ -52,12 +54,23 @@ export class SigninComponent implements OnInit {
     })
   }
 
+  //Password Toggle
+  togglePass(e:any){
+    let input=e.previousElementSibling;
+    input.type==='password'?input.type='text':input.type='password';
+  }
+
   constructor(private router:Router,private firebase:FbconnectionService) { }
 
   ngOnInit(): void {
+
+    //Remember me check
     onAuthStateChanged(this.firebase.auth,user=>{
       if(user&&user!==null){
-        this.router.navigate(['/home']);
+        this.userStatus=true;
+        setTimeout(()=>{
+          this.router.navigate(['/home']);
+        },500);
       }
     })
 }

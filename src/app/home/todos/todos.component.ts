@@ -12,6 +12,7 @@ export class TodosComponent implements OnInit {
 
   @Input() userId=null;
 
+  todoCount=0;
   todoDatas:any=[];
   key='';
   hasChild=false;
@@ -60,6 +61,7 @@ export class TodosComponent implements OnInit {
       Object.keys(dataSnap).map(p=>{
         this.todoDatas.push(dataSnap[p])
       });
+      this.todoCount=this.todoDatas.length;
     }
     });
   };

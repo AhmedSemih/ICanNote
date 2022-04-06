@@ -1,10 +1,14 @@
-<div class="loginpage d-flex">
+<div class="loginpage d-flex" *ngIf="!userStatus">
   <app-brand></app-brand>
+  <!-- Login Form Area -->
   <div class="main p-3 text-center w-100">
-    <h1 class="my-5">Login</h1>
+    <h1>Login</h1>
     <form class="form-group formarea" [formGroup]="loginForm" (submit)="onSubmit()">
         <input type="email" class="form-control p-2 m-auto w-75" placeholder="Email" formControlName="email">
+        <div class="passArea" >
         <input type="password" class="form-control p-2 m-auto mt-3 w-75" placeholder="Password" formControlName="pass">
+        <i class="fa-solid fa-eye-slash eyeToggle" (click)="togglePass($event.target)"></i>
+        </div>
         <div class="row w-75 m-auto bot">
           <div class="col-xl-7 pt-4 check">
             <label for="remember"><input type="checkbox" name="remember" formControlName="remember"> Remember Me</label>
@@ -14,7 +18,15 @@
         </div>
       </div>
     </form>
-    <h5 class="text-muted pt-3 mt-5 m-3">Don't have an account ?</h5>
+    <!-- Bottom Texts -->
+    <h5 class="text-muted pt-3 m-3">Don't have an account ?</h5>
     <a routerLink="/signup" class="m-5 h4">Sign Up</a>
   </div>
 </div>
+<!-- Loading -->
+<div class="loading d-flex" *ngIf="userStatus">
+  <div class="spinner-border text-primary text-center spin" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <h1 class="text-primary m-4">Loading...</h1>
+  </div>

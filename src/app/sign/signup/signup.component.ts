@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
 import { FbconnectionService } from 'src/app/fbconnection.service';
@@ -31,6 +31,7 @@ export class SignupComponent implements OnInit {
     let pass=this.signForm.get('pass')?.value;
     createUserWithEmailAndPassword(this.firebase.auth,email,pass)
     .then(()=>{
+      signOut(this.firebase.auth);
       Swal.fire({
         title:'Success',
         text:'Account created successfully.',
@@ -39,7 +40,7 @@ export class SignupComponent implements OnInit {
         confirmButtonText:'OK',
         timer:2000,
       }).then(()=>{
-        this.router.navigate(['/login'])
+       this.router.navigate(['/login'])
       })
     })
     .catch(()=>{
@@ -54,6 +55,12 @@ export class SignupComponent implements OnInit {
       )
       this.signForm.get('email')?.reset();
     })
+  }
+
+  //Toggle Password
+  togglePass(e:any){
+    let input=e.previousElementSibling;
+    input.type==='password'?input.type='text':input.type='password';
   }
 
   constructor(private router:Router,private firebase:FbconnectionService) { }

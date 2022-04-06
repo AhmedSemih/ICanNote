@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { signOut } from 'firebase/auth';
-import { push,ref,set, onValue,DataSnapshot} from 'firebase/database';
+import { push,ref,set, onValue} from 'firebase/database';
 import { FbconnectionService } from 'src/app/fbconnection.service';
 
 @Component({
@@ -72,6 +72,7 @@ export class NotesComponent implements OnInit {
     });
   }
 
+  //Logout
   onClickLogout(){
     signOut(this.firebase.auth);
     this.router.navigate(['/login']);
