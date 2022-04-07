@@ -4,7 +4,7 @@
 
 A useful todo and notepad application with database.
 
-**Live demo: [https://ahmedsemih.github.io/ICanNote/](https://ahmedsemih.github.io/ICanNote/)**
+**Live demo: [https://icannote.netlify.app/](https://icannote.netlify.app/)**
 
 ## Built with
 
@@ -14,6 +14,12 @@ A useful todo and notepad application with database.
 - [SweertAlert2](https://sweetalert2.github.io/)
 
 ## Getting Started
+
+Clone the repository
+
+```
+git clone https://github.com/AhmedSemih/ICanNote.git
+```
 
 After getting the starter files, you need to go the file directory and run
 
@@ -28,3 +34,4 @@ ng serve
 ```
 
 If you want to use your `Firebase Realtime Database` go to `app/fbconnection.service` and change `Firebase config`.
+
